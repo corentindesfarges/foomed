@@ -1,9 +1,5 @@
-cmake_minimum_required (VERSION 2.8.11)
+add_library(mylib SHARED lib.cpp)
 
-project (MAIN)
+target_include_directories(mylib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-set( CMAKE_INSTALL_PREFIX /usr )
-
-
-add_subdirectory( lib )
-add_subdirectory( bin )
+INSTALL( TARGETS mylib LIBRARY DESTINATION lib/corentin )
